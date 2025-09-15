@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <title>Эргономика — Презентация</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #0f172a;
+      color: white;
+      overflow: hidden;
+    }
+    .slides {
+      display: flex;
+      transition: transform 0.8s ease;
+      width: 100vw;
+      height: 100vh;
+    }
+    .slide {
+      min-width: 100%;
+      height: 100vh;
+      padding: 60px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+      position: relative;
+      z-index: 2;
+      gap: 40px;
+    }
+    .content {
+      flex: 1;
+      animation: fadeIn 1.5s ease;
+    }
+    .slide h1, .slide h2 {
+      margin-bottom: 20px;
+    }
+    .slide p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    .image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .image img {
+      max-width: 100%;
+      max-height: 70vh;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+
+    /* Фоновые анимированные кружки */
+    .background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0; left: 0;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.2), transparent);
+      animation: float 20s infinite;
+    }
+    .circle:nth-child(1){width: 400px; height: 400px; top: -100px; left: -100px; background: radial-gradient(circle, #ff6ec7, transparent);}
+    .circle:nth-child(2){width: 300px; height: 300px; bottom: -80px; right: -80px; background: radial-gradient(circle, #6e9bff, transparent);}
+    .circle:nth-child(3){width: 200px; height: 200px; top: 30%; left: 70%; background: radial-gradient(circle, #6effa1, transparent);}
+    @keyframes float {
+      0%{transform: translateY(0) translateX(0);}
+      50%{transform: translateY(-40px) translateX(20px);}
+      100%{transform: translateY(0) translateX(0);}
+    }
+
+    /* Анимация текста */
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Навигация */
+    .nav {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      z-index: 3;
+    }
+    .nav button {
+      width: 15px; height: 15px;
+      border-radius: 50%;
+      border: none;
+      background: #ffffff55;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .nav button.active {
+      background: #fff;
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="background">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+
+  <div class="slides" id="slides">
+    <!-- 1. Титульный слайд -->
+    <div class="slide" style="flex-direction:column; text-align:center;">
+      <h1>Эргономика</h1>
+      <p>Автор: Айкимбай Джалил<br>Топ: БҚ2503<br>Оқытушы: Шолпан Бекболатқызы</p>
+    </div>
+
+    <!-- 2 -->
+    <div class="slide">
+      <div class="content">
+        <h2>Эргономика ұғымы</h2>
+        <p>Эргономика – адамның жұмыс орнын, құралдарын және ортасын ыңғайлы, қауіпсіз және тиімді етіп ұйымдастыру ғылымы.</p>
+        <p>Бұл ғылым адамның физиологиялық және психологиялық ерекшеліктерін ескере отырып, еңбек өнімділігін арттыруға бағытталған.</p>
+      </div>
+      <div class="image">
+        <img src="images/image1.jpeg" alt="Эргономика ұғымы">
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="slide">
+      <div class="content">
+        <h2>Мақсаты</h2>
+        <p>Эргономиканың басты мақсаты – адамның денсаулығын сақтап, жұмыс тиімділігін арттыру.</p>
+        <p>Ол жұмыс жағдайын оңтайландырып, шаршауды азайтуға және қауіпсіздікті қамтамасыз етуге ықпал етеді.</p>
+      </div>
+      <div class="image">
+        <img src="images/image2.jpeg" alt="Эргономика мақсаты">
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="slide">
+      <div class="content">
+        <h2>Қолдану салалары</h2>
+        <p>Эргономика өнеркәсіп, кеңсе жұмысы, ақпараттық технологиялар, көлік және медицинада қолданылады.</p>
+        <p>Әр салада ол адам мен техника арасындағы өзара әрекеттестікті жетілдіреді.</p>
+      </div>
+      <div class="image">
+        <img src="images/image3.png" alt="Эргономика қолдану салалары">
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="slide">
+      <div class="content">
+        <h2>Жұмыс орны</h2>
+        <p>Жұмыс орнын дұрыс ұйымдастыру – эргономиканың негізгі бөлігі.</p>
+        <p>Бұл адамның шаршауын азайтып, жұмыс өнімділігін арттыруға көмектеседі.</p>
+      </div>
+      <div class="image">
+        <img src="images/image4.jpeg" alt="Жұмыс орны">
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="slide">
+      <div class="content">
+        <h2>Жарықтандыру</h2>
+        <p>Жарық көздерінің дұрыс орналасуы көзге түсетін жүктемені азайтады.</p>
+        <p>Жақсы жарықтандыру көздің шаршауын болдырмай, еңбек өнімділігін сақтайды.</p>
+      </div>
+      <div class="image">
+        <img src="images/image5.png" alt="Жарықтандыру">
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="slide">
+      <div class="content">
+        <h2>Дыбыс және шу</h2>
+        <p>Шудың жоғары деңгейі адамның назарын төмендетіп, шаршауды күшейтеді.</p>
+        <p>Сондықтан жұмыс орындарында дыбысты азайту шаралары маңызды.</p>
+      </div>
+      <div class="image">
+        <img src="images/image6.jpeg" alt="Дыбыс және шу">
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="slide">
+      <div class="content">
+        <h2>Түстердің әсері</h2>
+        <p>Түстер адамның психикасы мен көңіл-күйіне әсер етеді.</p>
+        <p>Жылы түстер ынталандырады, ал салқын түстер тыныштандырады.</p>
+      </div>
+      <div class="image">
+        <img src="images/image7.jpeg" alt="Түстердің әсері">
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="slide">
+      <div class="content">
+        <h2>Компьютерлік эргономика</h2>
+        <p>Монитордың биіктігі, пернетақтаның орналасуы және отырыс қалыптары – денсаулыққа тікелей әсер етеді.</p>
+        <p>Дұрыс отыру және экранға қашықтық сақтау – омыртқа мен көзді қорғаудың жолы.</p>
+      </div>
+      <div class="image">
+        <img src="images/image8.jpeg" alt="Компьютерлік эргономика">
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="slide">
+      <div class="content">
+        <h2>Қорытынды</h2>
+        <p>Эргономика – жайлылық пен денсаулықты сақтай отырып, тиімді жұмыс істеудің негізі.</p>
+        <p>Ол болашақта еңбек өнімділігі мен адамдардың өмір сапасын жақсартуда маңызды рөл атқарады.</p>
+      </div>
+      <div class="image">
+        <img src="images/image9.png" alt="Қорытынды">
+      </div>
+    </div>
+  </div>
+
+  <div class="nav" id="nav"></div>
+
+  <script>
+    const slides = document.getElementById("slides");
+    const nav = document.getElementById("nav");
+    const slideCount = slides.children.length;
+    let current = 0;
+
+    // создаём кнопки навигации
+    for (let i=0; i<slideCount; i++){
+      const btn = document.createElement("button");
+      if (i===0) btn.classList.add("active");
+      btn.addEventListener("click", ()=>goToSlide(i));
+      nav.appendChild(btn);
+    }
+    const buttons = nav.querySelectorAll("button");
+
+    function goToSlide(index){
+      if (index<0) index=0;
+      if (index>=slideCount) index=slideCount-1;
+      current=index;
+      slides.style.transform = `translateX(-${index*100}vw)`;
+      buttons.forEach((b,i)=>b.classList.toggle("active", i===index));
+    }
+
+    document.addEventListener("keydown", e=>{
+      if (e.key==="ArrowRight") goToSlide(current+1);
+      if (e.key==="ArrowLeft") goToSlide(current-1);
+    });
+  </script>
+</body>
+</html>
